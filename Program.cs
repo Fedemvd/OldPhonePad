@@ -5,12 +5,12 @@ class Program
 {
     static void Main()
     {
-        // Entrada manual
-        Console.WriteLine("Escribí la secuencia (ej: 4433555 555666#):");
+        // Manual Input
+        Console.WriteLine("Write the sequence (ex: 4433555 555666#):");
         string input = Console.ReadLine();
-        Console.WriteLine($"Resultado: {OldPhonePad(input)}");
+        Console.WriteLine($"Result: {OldPhonePad(input)}");
 
-        // Casos de prueba
+        // Test Cases
         Console.WriteLine("\n--- CASOS DE PRUEBA ---");
         Test("33#", "E");
         Test("227*#", "B");
@@ -23,7 +23,7 @@ class Program
     static void Test(string input, string expected)
     {
         string result = OldPhonePad(input);
-        Console.WriteLine($"Input: \"{input}\" → Resultado: \"{result}\" {(result == expected ? "✔️" : $"❌ (Esperado: \"{expected}\")")}");
+        Console.WriteLine($"Input: \"{input}\" → Result: \"{result}\" {(result == expected ? "✔️" : $"❌ (Esperado: \"{expected}\")")}");
     }
 
     static string OldPhonePad(string input)
@@ -59,7 +59,7 @@ class Program
             }
         }
 
-        // Por si no termina con #
+        // If it does not finish with #
         ProcessSequence(currentSequence, ref result);
         return result;
     }
